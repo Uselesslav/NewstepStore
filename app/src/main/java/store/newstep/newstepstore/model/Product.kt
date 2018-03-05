@@ -7,5 +7,5 @@ package store.newstep.newstepstore.model
 class Product(
         val name: String = "name",
         val price: Int = 100,
-        val category: Category = Category(),
-        val linkOnImage: String = "http://www.superheroes.ru/i/p/SNA34103_00.jpg")
+        val category: Category = Category() /* ,
+        val linkOnImage: String = "http://www.superheroes.ru/i/p/SNA34103_00.jpg" */)

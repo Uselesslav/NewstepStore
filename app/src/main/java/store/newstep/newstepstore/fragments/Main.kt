@@ -3,12 +3,13 @@ package store.newstep.newstepstore.fragments
 import android.app.Fragment
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_main.*
+import android.widget.LinearLayout
 import store.newstep.newstepstore.R
-import store.newstep.newstepstore.adapters.RecyclerViewProduct
+import store.newstep.newstepstore.adapters.RecyclerProductAdapter
 import store.newstep.newstepstore.model.Product
 
 /**
@@ -16,19 +17,17 @@ import store.newstep.newstepstore.model.Product
  * Главный экран приложения
  */
 class Main : Fragment() {
-    private lateinit var adapter: RecyclerViewProduct
-    private lateinit var linearLayoutManager: LinearLayoutManager
-
+    private lateinit var products: Array<Product>
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreate(savedInstanceState)
         val rootView = inflater!!.inflate(R.layout.fragment_main, container, false)
-        val arrayProduct = getProducts()
 
-        linearLayoutManager = LinearLayoutManager(activity)
-        rv_product?.layoutManager = linearLayoutManager
+        products = getProducts()
 
-        adapter = RecyclerViewProduct(arrayProduct)
-        rv_product?.adapter = adapter
+        val rv = rootView.findViewById<RecyclerView>(R.id.rv_product)
+        rv.layoutManager = LinearLayoutManager(activity, LinearLayout.HORIZONTAL, false)
+        val adapter = RecyclerProductAdapter(products)
+        rv.adapter = adapter
 
         return rootView
     }
@@ -37,6 +36,6 @@ class Main : Fragment() {
      * Возвращает список товаров
      * TODO заменить реальными товарами
      */
-    fun getProducts(): List<Product> = arrayListOf<Product>(Product(), Product(), Product())
+    fun getProducts(): Array<Product> = arrayOf<Product>(Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product())
 
 }
