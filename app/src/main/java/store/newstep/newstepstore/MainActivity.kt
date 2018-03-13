@@ -10,8 +10,10 @@ import store.newstep.newstepstore.fragments.Main
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
+        // Открытие фрагмента главного экрана
         fragmentManager
                 .beginTransaction()
                 .add(R.id.fl_container, Main())

@@ -14,8 +14,8 @@ import store.newstep.newstepstore.model.Product
  */
 class RecyclerProductAdapter(private val products: Array<Product>)
     : RecyclerView.Adapter<RecyclerProductAdapter.ProductHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ProductHolder {
-        val v = LayoutInflater.from(parent?.context).inflate(R.layout.holder_product, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductHolder {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.holder_product, parent, false)
 
         return ProductHolder(v)
     }
@@ -23,6 +23,7 @@ class RecyclerProductAdapter(private val products: Array<Product>)
     override fun onBindViewHolder(holder: ProductHolder, position: Int) {
         val product = products[position]
 
+        // Заполнение полей разметки
         holder.name.text = product.name
         holder.category.text = product.category.name
         holder.price.text = product.price.toString()
@@ -31,6 +32,9 @@ class RecyclerProductAdapter(private val products: Array<Product>)
     override fun getItemCount() = products.size
 
     class ProductHolder(view: View) : RecyclerView.ViewHolder(view) {
+        /**
+         * Разметка элемента
+         */
         val name: TextView = view.findViewById<TextView>(R.id.tv_name)
         val category: TextView = view.findViewById<TextView>(R.id.tv_category)
         val price: TextView = view.findViewById<TextView>(R.id.tv_price)

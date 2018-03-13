@@ -17,13 +17,19 @@ import store.newstep.newstepstore.model.Product
  * Главный экран приложения
  */
 class Main : Fragment() {
+    /**
+     * Массив товаров
+     */
     private lateinit var products: Array<Product>
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreate(savedInstanceState)
+        // Разметка фрагмента
         val rootView = inflater!!.inflate(R.layout.fragment_main, container, false)
 
         products = getProducts()
 
+        // Список топ товаров
         val rv = rootView.findViewById<RecyclerView>(R.id.rv_product)
         rv.layoutManager = LinearLayoutManager(activity, LinearLayout.HORIZONTAL, false)
         val adapter = RecyclerProductAdapter(products)
@@ -36,6 +42,6 @@ class Main : Fragment() {
      * Возвращает список товаров
      * TODO заменить реальными товарами
      */
-    fun getProducts(): Array<Product> = arrayOf<Product>(Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product(), Product())
+    private fun getProducts(): Array<Product> = Array(15, { i -> Product("name$i") })
 
 }
