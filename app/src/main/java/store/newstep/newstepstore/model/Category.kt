@@ -1,9 +1,14 @@
 package store.newstep.newstepstore.model
 
+import com.google.gson.annotations.SerializedName
+
 /**
  * Created by wyacheslav on 27.02.18.
  * Категория
+ * TODO убрать дефолтные значения из конструктора
  */
-class Category(
-        val name: String = "category"/*,
-        val bitmap: Bitmap?*/)
+data class Category(
+        @SerializedName("id")
+        val id: Int = 0,
+        @SerializedName("name")
+        val name: String = "category")
