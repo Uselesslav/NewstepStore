@@ -6,6 +6,7 @@ import java.util.*
 /**
  * Created by wyacheslav on 14.03.18.
  * Список цветов для получения с сервера
+ * TODO: постараться сделать универсальным методом получения списков с сервера
  */
 data class GetBodyResponse<T>(
         @SerializedName("colors")

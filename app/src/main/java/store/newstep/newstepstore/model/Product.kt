@@ -5,16 +5,15 @@ import com.google.gson.annotations.SerializedName
 /**
  * Created by wyacheslav on 27.02.18.
  * Товар
- * TODO убрать дефолтные значения из конструктора
  */
 data class Product(
         @SerializedName("id")
-        val id: Int = 1,
+        val id: Int,
         @SerializedName("name")
-        val name: String = "name",
+        val name: String,
         @SerializedName("description")
-        val description: String = "description",
+        val description: String,
         @SerializedName("img")
-        val img: String = "http://test-api-shop.abo-soft.com/files/slider_detail/ef2eb797ff61129c1adcbff96221a80b.jpeg",
+        val img: String,
         @SerializedName("category")
-        val category: Category = Category())
+        val category: Category)

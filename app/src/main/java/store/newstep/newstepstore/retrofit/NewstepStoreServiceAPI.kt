@@ -10,6 +10,7 @@ import store.newstep.newstepstore.model.GetBodyResponse
 /**
  * Created by wyacheslav on 13.03.18.
  * АПИ сервера
+ * TODO сделать универсальным
  */
 interface NewstepStoreServiceAPI {
 

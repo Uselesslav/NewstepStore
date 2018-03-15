@@ -5,20 +5,19 @@ import com.google.gson.annotations.SerializedName
 /**
  * Created by wyacheslav on 27.02.18.
  * Цвет
- * TODO убрать дефолтные значения из конструктора
  */
 data class Color(
         @SerializedName("id")
-        val id: Int = 1,
+        val id: Int,
         @SerializedName("name")
-        val name: String = "name",
+        val name: String,
         @SerializedName("isSale")
-        val isSale: Boolean = true,
+        val isSale: Boolean,
         @SerializedName("oldPrice")
-        val oldPrice: Int = 200,
+        val oldPrice: Int,
         @SerializedName("price")
-        val price: Int = 100,
+        val price: Int,
         @SerializedName("img")
-        val img: String = "http://test-api-shop.abo-soft.com/files/thumb/ef2eb797ff61129c1adcbff96221a80b.jpeg",
+        val img: String,
         @SerializedName("product")
-        val product: Product = Product())
+        val product: Product)
